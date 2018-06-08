@@ -46,12 +46,13 @@ public abstract class Transport {
 		return cost;
 	}
 	
-	public void setCost(double scost) {
-		this.speed=cost;
+	public void setCost(double cost) {
+		this.cost=cost;
 	}
 	
 	public abstract void toReccomend();
 	
+
 	@Override
 	public String toString() {
 		return "Transport [name="+name+",  speed="+speed+".  it costs: "+cost+"$]";

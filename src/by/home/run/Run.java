@@ -16,38 +16,44 @@ public class Run {
 		Metro metro1=new Metro("Metro", "electrocity", 120, 1, "Only in Minsk");
 		Transport[] transpToChoose1= {bike1, motorBike1, car1,  metro1};
 		
-		ManagerOfTransport managerOfTransport1=new ManagerOfTransport(transpToChoose1);
+		Bike bike2=new Bike("Bike","nogi", 15, 888, "good");
+		MotorBike motorBike2=new MotorBike("MotorBike", "dvigatel", 40, 8888, true);
+		Car car2=new Car("Car", "dvigatel", 80, 88888, 5);
+		Metro metro2=new Metro("Metro", "electrocity", 120, 8, "Only in Minsk");
+		Transport[] transpToChoose2= {bike2, motorBike2, car2,  metro2};
 		
-		for (int i=0; i<transpToChoose1.length; i++) {
-			System.out.println(transpToChoose1[i]);
-		}
+		ManagerOfTransport managerOfTransport1=new ManagerOfTransport(transpToChoose1, transpToChoose2);
 		
-//		System.out.println();
-//		printTransport();
-//		toDoChoose();
+		managerOfTransport1.printTransport(); 
+		System.out.println();
 		
-		for(int i=0; i<transpToChoose1.length; i++) {
-				for(int j=0; j<transpToChoose1.length; j++) {
-				if (transpToChoose1[i].getCost()<transpToChoose1[j].getCost()) {
-					Transport temp=transpToChoose1[i];
-					transpToChoose1[i]=transpToChoose1[j];
-					transpToChoose1[j]=temp;
-				}
-				}
-			}
+//		rabotaet		
+//		for (int i=0; i<transpToChoose1.length; i++) {
+//			System.out.println(transpToChoose1[i]);
+//		}
 		
-		for (int i=0; i<transpToChoose1.length; i++) {
-			System.out.println(transpToChoose1[i]);
-		}
+		bike1.toReccomend(); 
+		System.out.println();
 		
-		toDoChoose(transpToChoose1);
-//		printTransport(transpToChoose1);
+		managerOfTransport1.toReccomend();
+		System.out.println();
 		
-//		ManagerOfTransport manOfTr1=new ManagerOfTransport(transpToChoose1);
 		
-//		Transport=Transport.toDoChoose();
+//		rabotaet
+//		for(Transport t:  transpToChoose1) {
+//			t.toReccomend();
+//			}
+	
+//		rabotaet
+//		for(ManagerOfTransport m:  managerOfTransport1) {
+//			m.toReccomend();
+//			}
 		
-
+	
+		managerOfTransport1.toDoChooseByCost();
+		
+		System.out.println("Posle sortirovki: ");
+		managerOfTransport1.printTransport(); 
 	}
 
 
